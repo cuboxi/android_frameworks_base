@@ -249,7 +249,9 @@ public class TelephonyManager {
         } catch (RemoteException ex) {
             return null;
         } catch (NullPointerException ex) {
-            return null;
+            /* Some applications crash if they get null. Fake on */
+            String s = "22222222";
+            return s;
         }
     }
 
